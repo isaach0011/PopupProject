@@ -8,12 +8,20 @@ public class PopupController
 	
 	public PopupController()
 	{
-		
+		display = new PopupViewer();
 	}
 	
 	public void start()
 	{
+		int count = 0;
+		String answer = "sample";
 		
+		while(answer != null && !answer.equals(""))
+		{
+			display.displayMessage("Look at the words on the monitor.");
+			
+			answer = display.collectResponse("Type your question here.");
+		}
 	}
 	
 	/**
@@ -34,9 +42,33 @@ public class PopupController
 		
 		catch(NumberFormatException notDoubleError)
 		{
-			display.displayMessage("That was not a double.");
+			display.displayMessage("That was not a double. >:(");
 		}
 		
 		return validDouble;
+	}
+	
+	/**
+	 * Checks the supplied String value to see if it can beonverted to an integer.
+	 * If it cannot a popup message is displayed.
+	 * @param potentialValue The supplied String.
+	 * @return Whether a conversion to an integer is possible.
+	 */
+	
+	private boolean isInteger(String potentialValue)
+	{
+		boolean validInteger = false;
+		
+		try
+		{
+			int testValue = Integer.parseInt(potentialValue);
+			validInteger = true;
+		}
+		catch (NumberFormatException notIntegerError)
+		{
+			display.displayMessage(notIntegerError.getMessage());
+			display.displayMessage("You need type in an int.");
+		}
+		return validInteger;
 	}
 }
