@@ -84,5 +84,16 @@ public class PopupController
 		Thingy firstThingy = new Thingy();
 		thingyList.add(firstThingy);
 		display.displayMessage("This is the size of the list: " + thingyList.size());
+		Thingy secondThingy = new Thingy();
+		thingyList.add(secondThingy);
+		display.displayMessage("This is the size of the list: " + thingyList.size()); 
+		Thingy thirdThingy = new Thingy();
+		thingyList.add(thirdThingy);
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+		Thingy forthThingy = new Thingy();
+		thingyList.add(forthThingy);
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+		
+		
 	}
 }
