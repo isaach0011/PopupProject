@@ -1,29 +1,35 @@
 package popup.controller;
 
 import popups.view.PopupViewer;
+import popups.model.Thingy;
+import java.util.List;
+import java.util.ArrayList;
 
 public class PopupController
 {
 	private PopupViewer display;
+	private List<Thingy> thingyList;
 	
 	public PopupController()
 	{
 		display = new PopupViewer();
+		thingyList = new ArrayList<Thingy>();
 	}
 	
 	public void start()
 	{
-		int count = 0;
-		String answer = "sample";
-		
-		while(answer != null && !answer.equals(""))
-		{
-			display.displayMessage("Look at the words on the monitor.");
-			
-			answer = display.collectResponse("Type your question here.");
-		}
+		learnLists();
 	}
 	
+	private void askQuestionLoop()
+	{
+		String answer = "sample";
+		
+		while(answer != null && !isDouble(answer))
+		{	
+			answer = display.collectResponse("You need to type in a double!");
+		}
+	}
 	/**
 	 * Checks a supplied String value to see if it can be converted to a double.
 	 * @param potentialValue The supplied String.
@@ -49,7 +55,7 @@ public class PopupController
 	}
 	
 	/**
-	 * Checks the supplied String value to see if it can beonverted to an integer.
+	 * Checks the supplied String value to see if it can be converted to an integer.
 	 * If it cannot a popup message is displayed.
 	 * @param potentialValue The supplied String.
 	 * @return Whether a conversion to an integer is possible.
@@ -70,5 +76,13 @@ public class PopupController
 			display.displayMessage("You need type in an int.");
 		}
 		return validInteger;
+	}
+	
+	private void learnLists()
+	{
+		display.displayMessage("This is the size of the list: " + thingyList.size());
+		Thingy firstThingy = new Thingy();
+		thingyList.add(firstThingy);
+		display.displayMessage("This is the size of the list: " + thingyList.size());
 	}
 }
