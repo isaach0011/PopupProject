@@ -2,58 +2,51 @@ package popups.model;
 
 public class Thingy
 {
-	private int numberThing;
-	private double valueThing;
-	private String wordThing;
-	private boolean isValidThing;
-	//Declarations--------------------------------
-	public Thingy()
-	{
-		this.numberThing = 666;
-		this.valueThing = 12345;
-		this.wordThing = "I am a string.";
-	}
+	private int number;
+	private double value;
+	private String words;
+	private boolean isValid;
 	//Getters-------------------------------------
 	
-	public int getNumberthing()
+	public int getNumber()
 	{
-		return numberThing;
+		return number;
 	}
 	
-	public double getValuething()
+	public double getValue()
 	{
-		return valueThing;
+		return value;
 	}
 	
-	public String getWordthing()
+	public String getWords()
 	{
-		return wordThing;
+		return words;
 	}
 	
-	public boolean getIsValidThing()
+	public boolean getIsValid()
 	{
-		return isValidThing;
+		return isValid;
 	}
 	
 	//Setters---------------------------------------
 	
-	public void setNumberThing(int numberThing)
+	public void setNumber(int numberThing)
 	{
-		this.numberThing = numberThing;
+		this.number = numberThing;
 	}
 	
-	public void setValueThing(Double valueThing)
+	public void setValue(Double valueThing)
 	{
-		this.valueThing = valueThing;
+		this.value = valueThing;
 	}
 	
-	public void setWordThing(String wordThing)
+	public void setWords(String wordThing)
 	{
-		this.wordThing = wordThing;
+		this.words = wordThing;
 	}
 	
-	public void setIsValueThing(boolean isValidThing)
+	public void setIsValue(boolean isValidThing)
 	{
-		this.isValidThing = isValidThing;
+		this.isValid = isValidThing;
 	}
 }
