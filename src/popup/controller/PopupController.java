@@ -30,6 +30,7 @@ public class PopupController
 			answer = display.collectResponse("You need to type in a double!");
 		}
 	}
+	
 	/**
 	 * Checks a supplied String value to see if it can be converted to a double.
 	 * @param potentialValue The supplied String.
@@ -84,16 +85,7 @@ public class PopupController
 		Thingy firstThingy = new Thingy();
 		thingyList.add(firstThingy);
 		display.displayMessage("This is the size of the list: " + thingyList.size());
-		Thingy secondThingy = new Thingy();
-		thingyList.add(secondThingy);
-		display.displayMessage("This is the size of the list: " + thingyList.size()); 
-		Thingy thirdThingy = new Thingy();
-		thingyList.add(thirdThingy);
-		display.displayMessage("This is the size of the list: " + thingyList.size());
-		Thingy forthThingy = new Thingy();
-		thingyList.add(forthThingy);
-		display.displayMessage("This is the size of the list: " + thingyList.size());
-		
+
 		for (int index = 0; index < 5; index++)
 		{
 			Thingy loopThingy = new Thingy();
@@ -123,5 +115,24 @@ public class PopupController
 		{
 			display.displayMessage(thingyList.get(index).getWords());
 		}
+		
+		Thingy replacement = new Thingy();
+		replacement.setWords("I am a replicant");
+		
+		Thingy old = thingyList.set(0, replacement);
+		
+		for (int index = 0; index < thingyList.size(); index++)
+		{
+			display.displayMessage(thingyList.get(index).getWords());
+		}
+		old.setWords("I was replaced :(");
+		display.displayMessage(old.getWords());
+		
+		thingyList.remove(4);
+		display.displayMessage("The size is now " + thingyList.size());
+		old = thingyList.remove(4);
+		display.displayMessage("The size is now " + thingyList.size());
+		display.displayMessage("This is what I removed: " + old.getWords());
+		thingyList.add(0, old);
 	}
 }

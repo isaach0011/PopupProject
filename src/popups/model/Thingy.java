@@ -30,23 +30,23 @@ public class Thingy
 	
 	//Setters---------------------------------------
 	
-	public void setNumber(int numberThing)
+	public void setNumber(int number)
 	{
-		this.number = numberThing;
+		this.number = number;
 	}
 	
-	public void setValue(Double valueThing)
+	public void setValue(Double value)
 	{
-		this.value = valueThing;
+		this.value = value;
 	}
 	
-	public void setWords(String wordThing)
+	public void setWords(String word)
 	{
-		this.words = wordThing;
+		this.words = word;
 	}
 	
-	public void setIsValue(boolean isValidThing)
+	public void setIsValue(boolean isValid)
 	{
-		this.isValid = isValidThing;
+		this.isValid = isValid;
 	}
 }
