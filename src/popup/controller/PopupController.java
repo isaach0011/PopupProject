@@ -134,5 +134,21 @@ public class PopupController
 		display.displayMessage("The size is now " + thingyList.size());
 		display.displayMessage("This is what I removed: " + old.getWords());
 		thingyList.add(0, old);
+		
+		for(Thingy currentThingy : thingyList)
+		{
+			display.displayMessage("The current value is " + currentThingy.getWords());
+		}
+		
+		for (Thingy currentThingy : thingyList)
+		{
+			currentThingy = new Thingy();
+		}
+		
+		for(Thingy currentThingy : thingyList)
+		{
+			thingyList.remove(0);
+		}
+		
 	}
 }
